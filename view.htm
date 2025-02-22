@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>IT3030_2025_2_3_1_IT: Practical Sheet 01 | Version Controlling with Git - 1</title>
+    <link rel="shortcut icon" href="https://courseweb.sliit.lk/pluginfile.php/1/theme_lambda/favicon/1736872561/Sliit%20crest.png" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, IT3030_2025_2_3_1_IT: Practical Sheet 01 | Version Controlling with Git - 1" />
+<link rel="stylesheet" type="text/css" href="https://courseweb.sliit.lk/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://courseweb.sliit.lk/theme/styles.php/lambda/1736872561_1/all" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/courseweb.sliit.lk","sesskey":"7ocObxe9cS","sessiontimeout":"14400","themerev":"1736872561","slasharguments":1,"theme":"lambda","iconsystemmodule":"core\/icon_system_standard","jsrev":"1656610110","admin":"admin","svgicons":true,"usertimezone":"Asia\/Colombo","contextid":428743,"langrev":1661399613,"templaterev":"1656610110"};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/courseweb.sliit.lk\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/courseweb.sliit.lk\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/courseweb.sliit.lk\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/courseweb.sliit.lk\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/courseweb.sliit.lk\/theme\/yui_combo.php?m\/1656610110\/","combine":true,"comboBase":"https:\/\/courseweb.sliit.lk\/theme\/yui_combo.php?","ext":false,"root":"m\/1656610110\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/courseweb.sliit.lk\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/courseweb.sliit.lk\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1656610110\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/courseweb.sliit.lk\/lib\/javascript.php\/1656610110\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/courseweb.sliit.lk\/lib\/javascript.php\/1656610110\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.jsdelivr.net\/npm\/mathjax@2.7.8\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400%7CPontano+Sans:400" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous">
+</head>
+
+<body  id="page-mod-resource-view" class="format-weeks  path-mod path-mod-resource chrome dir-ltr lang-en yui-skin-sam yui3-skin-sam courseweb-sliit-lk pagelayout-incourse course-6071 context-428743 cmid-353049 category-2611 columns3 has-region-side-pre has-region-side-post used-region-side-pre used-region-side-post blockstyle-02 sidebar-enabled sidebar-closed">
+
+<div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div><script src="https://courseweb.sliit.lk/lib/javascript.php/1656610110/lib/babel-polyfill/polyfill.min.js"></script>
+<script src="https://courseweb.sliit.lk/lib/javascript.php/1656610110/lib/polyfills/polyfill.js"></script>
+<script src="https://courseweb.sliit.lk/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script src="https://courseweb.sliit.lk/theme/jquery.php/core/jquery-3.5.1.min.js"></script>
+<script src="https://courseweb.sliit.lk/lib/javascript.php/1656610110/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+<div id="sidebar" class="">
+	<aside id="block-region-side-pre" class="block-region" data-blockregion="side-pre" data-droptarget="1"><a href="#sb-2" class="sr-only sr-only-focusable">Skip Navigation</a>
+
+<section id="inst21"
+     class=" block_navigation block  card mb-3"
+     role="navigation"
+     data-block="navigation"
+          aria-labelledby="instance-21-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h5 id="instance-21-header" class="card-title d-inline">Navigation</h5>
+
+
+        <div class="card-text content mt-3">
+            <ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/nav_loader"><li class="type_unknown depth_1 contains_branch" aria-labelledby="label_1_1"><p class="tree_item branch navigation_node" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc310811_group" data-collapsible="false"><a tabindex="-1" id="label_1_1" href="https://courseweb.sliit.lk/my/">Dashboard</a></p><ul id="random67b9a3dc310811_group" role="group"><li class="type_setting depth_2 item_with_icon" aria-labelledby="label_2_2"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_2_2" href="https://courseweb.sliit.lk/?redirect=0"><img class="icon navicon" alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/home" /><span class="item-content-wrap">Site home</span></a></p></li><li class="type_course depth_2 contains_branch" aria-labelledby="label_2_3"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc310813_group"><span tabindex="-1" id="label_2_3" title="SLIIT CourseWeb">SLIIT CourseWeb</span></p><ul id="random67b9a3dc310813_group" role="group" aria-hidden="true"><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_5"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_5" href="https://courseweb.sliit.lk/badges/view.php?type=1"><img class="icon navicon" alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/navigationitem" /><span class="item-content-wrap">Site badges</span></a></p></li><li class="type_setting depth_3 item_with_icon" aria-labelledby="label_3_6"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_6" href="https://courseweb.sliit.lk/tag/search.php"><img class="icon navicon" alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/navigationitem" /><span class="item-content-wrap">Tags</span></a></p></li><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_7"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_7" href="https://courseweb.sliit.lk/calendar/view.php?view=month&amp;course=6071"><img class="icon navicon" alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/calendar" /><span class="item-content-wrap">Calendar</span></a></p></li></ul></li><li class="type_system depth_2 contains_branch" aria-labelledby="label_2_12"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc310817_group"><span tabindex="-1" id="label_2_12">My courses</span></p><ul id="random67b9a3dc310817_group" role="group"><li class="type_unknown depth_3 contains_branch" aria-labelledby="label_3_13"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc310818_group"><span tabindex="-1" id="label_3_13">Faculty of Computing</span></p><ul id="random67b9a3dc310818_group" role="group"><li class="type_unknown depth_4 contains_branch" aria-labelledby="label_4_14"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc310819_group"><span tabindex="-1" id="label_4_14">Support Service</span></p><ul id="random67b9a3dc310819_group" role="group" aria-hidden="true"><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_15"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_26" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_26" data-node-key="26" data-node-type="20"><a tabindex="-1" id="label_5_15" title="Examination Notices" href="https://courseweb.sliit.lk/course/view.php?id=26">Examination Notices</a></p></li><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_16"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_25" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_25" data-node-key="25" data-node-type="20"><a tabindex="-1" id="label_5_16" title="Faculty Notices" href="https://courseweb.sliit.lk/course/view.php?id=25">Faculty Notices</a></p></li></ul></li><li class="type_unknown depth_4 contains_branch" aria-labelledby="label_4_17"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108110_group"><span tabindex="-1" id="label_4_17">B.Sc (Hons) Information Technology (SLIIT)</span></p><ul id="random67b9a3dc3108110_group" role="group"><li class="type_unknown depth_5 contains_branch" aria-labelledby="label_5_18"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108111_group"><span tabindex="-1" id="label_5_18">1st Year</span></p><ul id="random67b9a3dc3108111_group" role="group" aria-hidden="true"><li class="type_unknown depth_6 contains_branch" aria-labelledby="label_6_19"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108112_group"><span tabindex="-1" id="label_6_19">1st Semester</span></p><ul id="random67b9a3dc3108112_group" role="group" aria-hidden="true"><li class="type_unknown depth_7 contains_branch" aria-labelledby="label_7_20"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108113_group"><span tabindex="-1" id="label_7_20">Information Technology</span></p><ul id="random67b9a3dc3108113_group" role="group" aria-hidden="true"><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_21"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108114_group"><span tabindex="-1" id="label_8_21">2022</span></p><ul id="random67b9a3dc3108114_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_22"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108115_group"><span tabindex="-1" id="label_9_22">2022 October</span></p><ul id="random67b9a3dc3108115_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_23"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_1177" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_1177" data-node-key="1177" data-node-type="20"><a tabindex="-1" id="label_10_23" title="Introduction to Programming - IT1010  [2022/OCT]" href="https://courseweb.sliit.lk/course/view.php?id=1177">Introduction to Programming - IT1010  [2022/OCT]</a></p></li></ul></li><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_24"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108116_group"><span tabindex="-1" id="label_9_24">2022 July</span></p><ul id="random67b9a3dc3108116_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_25"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_597" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_597" data-node-key="597" data-node-type="20"><a tabindex="-1" id="label_10_25" title="Introduction to Programming - IT1010  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=597">Introduction to Programming - IT1010  [2022/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_26"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_598" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_598" data-node-key="598" data-node-type="20"><a tabindex="-1" id="label_10_26" title="Introduction to Computer Systems - IT1020  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=598">Introduction to Computer Systems - IT1020  [2022/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_27"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_599" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_599" data-node-key="599" data-node-type="20"><a tabindex="-1" id="label_10_27" title="Mathematics for Computing - IT1030  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=599">Mathematics for Computing - IT1030  [2022/JUL]</a></p></li></ul></li></ul></li></ul></li></ul></li><li class="type_unknown depth_6 contains_branch" aria-labelledby="label_6_28"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108117_group"><span tabindex="-1" id="label_6_28">2nd Semester</span></p><ul id="random67b9a3dc3108117_group" role="group" aria-hidden="true"><li class="type_unknown depth_7 contains_branch" aria-labelledby="label_7_29"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108118_group"><span tabindex="-1" id="label_7_29">Information Technology</span></p><ul id="random67b9a3dc3108118_group" role="group" aria-hidden="true"><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_30"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108119_group"><span tabindex="-1" id="label_8_30">2022</span></p><ul id="random67b9a3dc3108119_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_31"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108120_group"><span tabindex="-1" id="label_9_31">2022 July</span></p><ul id="random67b9a3dc3108120_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_32"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_601" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_601" data-node-key="601" data-node-type="20"><a tabindex="-1" id="label_10_32" title="Object Oriented Concepts - IT1050  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=601">Object Oriented Concepts - IT1050  [2022/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_33"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_602" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_602" data-node-key="602" data-node-type="20"><a tabindex="-1" id="label_10_33" title="Software Process Modeling - IT1060  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=602">Software Process Modeling - IT1060  [2022/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_34"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_604" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_604" data-node-key="604" data-node-type="20"><a tabindex="-1" id="label_10_34" title="Information Systems &amp; Data Modeling - IT1090  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=604">Information Systems &amp; Data Modeling - IT1090  ...</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_35"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_605" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_605" data-node-key="605" data-node-type="20"><a tabindex="-1" id="label_10_35" title="Internet and Web Technologies - IT1100  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=605">Internet and Web Technologies - IT1100  [2022/JUL]</a></p></li></ul></li></ul></li><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_36"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108121_group"><span tabindex="-1" id="label_8_36">2023</span></p><ul id="random67b9a3dc3108121_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_37"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108122_group"><span tabindex="-1" id="label_9_37">2023 February</span></p><ul id="random67b9a3dc3108122_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_38"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_1524" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_1524" data-node-key="1524" data-node-type="20"><a tabindex="-1" id="label_10_38" title="Object Oriented Concepts - IT1050  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1524">Object Oriented Concepts - IT1050  [2023/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_39"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_1526" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_1526" data-node-key="1526" data-node-type="20"><a tabindex="-1" id="label_10_39" title="English for Academic Purposes - IT1080  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1526">English for Academic Purposes - IT1080  [2023/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_40"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_1527" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_1527" data-node-key="1527" data-node-type="20"><a tabindex="-1" id="label_10_40" title="Information Systems &amp; Data Modeling - IT1090  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1527">Information Systems &amp; Data Modeling - IT1090  ...</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_41"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_1528" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_1528" data-node-key="1528" data-node-type="20"><a tabindex="-1" id="label_10_41" title="Internet &amp; Web Technologies - IT1100  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1528">Internet &amp; Web Technologies - IT1100  [2023/FEB]</a></p></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="type_unknown depth_5 contains_branch" aria-labelledby="label_5_42"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108123_group"><span tabindex="-1" id="label_5_42">2nd Year</span></p><ul id="random67b9a3dc3108123_group" role="group" aria-hidden="true"><li class="type_unknown depth_6 contains_branch" aria-labelledby="label_6_43"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108124_group"><span tabindex="-1" id="label_6_43">1st Semester</span></p><ul id="random67b9a3dc3108124_group" role="group" aria-hidden="true"><li class="type_unknown depth_7 contains_branch" aria-labelledby="label_7_44"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108125_group"><span tabindex="-1" id="label_7_44">Information Technology</span></p><ul id="random67b9a3dc3108125_group" role="group" aria-hidden="true"><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_45"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108126_group"><span tabindex="-1" id="label_8_45">2022</span></p><ul id="random67b9a3dc3108126_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_46"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108127_group"><span tabindex="-1" id="label_9_46">2022 July</span></p><ul id="random67b9a3dc3108127_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_47"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_609" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_609" data-node-key="609" data-node-type="20"><a tabindex="-1" id="label_10_47" title="Object Oriented Programming - IT2030  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=609">Object Oriented Programming - IT2030  [2022/JUL]</a></p></li></ul></li></ul></li><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_48"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108128_group"><span tabindex="-1" id="label_8_48">2023</span></p><ul id="random67b9a3dc3108128_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_49"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108129_group"><span tabindex="-1" id="label_9_49">2023 July</span></p><ul id="random67b9a3dc3108129_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_50"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2817" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2817" data-node-key="2817" data-node-type="20"><a tabindex="-1" id="label_10_50" title="Software Engineering - IT2020  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2817">Software Engineering - IT2020  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_51"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2818" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2818" data-node-key="2818" data-node-type="20"><a tabindex="-1" id="label_10_51" title="Object Oriented Programming - IT2030  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2818">Object Oriented Programming - IT2030  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_52"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2819" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2819" data-node-key="2819" data-node-type="20"><a tabindex="-1" id="label_10_52" title="Database Management Systems - IT2040  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2819">Database Management Systems - IT2040  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_53"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2820" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2820" data-node-key="2820" data-node-type="20"><a tabindex="-1" id="label_10_53" title="Computer Networks - IT2050  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2820">Computer Networks - IT2050  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_54"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2821" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2821" data-node-key="2821" data-node-type="20"><a tabindex="-1" id="label_10_54" title="Operating Systems and System Administration - IT2060  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2821">Operating Systems and System Administration - IT20...</a></p></li></ul></li></ul></li></ul></li></ul></li><li class="type_unknown depth_6 contains_branch" aria-labelledby="label_6_55"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108130_group"><span tabindex="-1" id="label_6_55">2nd Semester</span></p><ul id="random67b9a3dc3108130_group" role="group" aria-hidden="true"><li class="type_unknown depth_7 contains_branch" aria-labelledby="label_7_56"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108131_group"><span tabindex="-1" id="label_7_56">Information Technology</span></p><ul id="random67b9a3dc3108131_group" role="group" aria-hidden="true"><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_57"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108132_group"><span tabindex="-1" id="label_8_57">2023</span></p><ul id="random67b9a3dc3108132_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_58"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108133_group"><span tabindex="-1" id="label_9_58">2023 July</span></p><ul id="random67b9a3dc3108133_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_59"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2833" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2833" data-node-key="2833" data-node-type="20"><a tabindex="-1" id="label_10_59" title="Mobile Application Development - IT2010  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2833">Mobile Application Development - IT2010  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_60"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2834" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2834" data-node-key="2834" data-node-type="20"><a tabindex="-1" id="label_10_60" title="Data Structures &amp; Algorithms - IT2070  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2834">Data Structures &amp; Algorithms - IT2070  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_61"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2835" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2835" data-node-key="2835" data-node-type="20"><a tabindex="-1" id="label_10_61" title="Professional Skills - IT2090  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2835">Professional Skills - IT2090  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_62"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2836" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2836" data-node-key="2836" data-node-type="20"><a tabindex="-1" id="label_10_62" title="Employability  Skills Development - Seminar - IT2100  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2836">Employability  Skills Development - Seminar - IT21...</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_63"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2837" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2837" data-node-key="2837" data-node-type="20"><a tabindex="-1" id="label_10_63" title="Probability &amp; Statistics - IT2110  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2837">Probability &amp; Statistics - IT2110  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_64"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2366" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2366" data-node-key="2366" data-node-type="20"><a tabindex="-1" id="label_10_64" title="Information Technology Project - IT2080 [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2366">Information Technology Project - IT2080 [2023/JUL]</a></p></li></ul></li></ul></li><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_65"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108134_group"><span tabindex="-1" id="label_8_65">2024</span></p><ul id="random67b9a3dc3108134_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_66"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108135_group"><span tabindex="-1" id="label_9_66">2024 February</span></p><ul id="random67b9a3dc3108135_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_67"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_3931" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_3931" data-node-key="3931" data-node-type="20"><a tabindex="-1" id="label_10_67" title="Mobile Application Development - IT2010  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3931">Mobile Application Development - IT2010  [2024/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_68"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_3932" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_3932" data-node-key="3932" data-node-type="20"><a tabindex="-1" id="label_10_68" title="Data Structures &amp; Algorithms - IT2070  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3932">Data Structures &amp; Algorithms - IT2070  [2024/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_69"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_3521" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_3521" data-node-key="3521" data-node-type="20"><a tabindex="-1" id="label_10_69" title="Information Technology Project - IT2080 [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3521">Information Technology Project - IT2080 [2024/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_70"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_3933" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_3933" data-node-key="3933" data-node-type="20"><a tabindex="-1" id="label_10_70" title="Professional Skills - IT2090  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3933">Professional Skills - IT2090  [2024/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_71"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_3934" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_3934" data-node-key="3934" data-node-type="20"><a tabindex="-1" id="label_10_71" title="Employability  Skills Development  - IT2100  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3934">Employability  Skills Development  - IT2100  [2024...</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_72"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_3935" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_3935" data-node-key="3935" data-node-type="20"><a tabindex="-1" id="label_10_72" title="Probability &amp; Statistics - IT2110  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3935">Probability &amp; Statistics - IT2110  [2024/FEB]</a></p></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="type_unknown depth_5 contains_branch" aria-labelledby="label_5_73"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108136_group"><span tabindex="-1" id="label_5_73">3rd Year</span></p><ul id="random67b9a3dc3108136_group" role="group"><li class="type_unknown depth_6 contains_branch" aria-labelledby="label_6_74"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108137_group"><span tabindex="-1" id="label_6_74">1st Semester</span></p><ul id="random67b9a3dc3108137_group" role="group"><li class="type_unknown depth_7 contains_branch" aria-labelledby="label_7_75"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108138_group"><span tabindex="-1" id="label_7_75">Information Technology</span></p><ul id="random67b9a3dc3108138_group" role="group"><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_76"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108139_group"><span tabindex="-1" id="label_8_76">2023</span></p><ul id="random67b9a3dc3108139_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_77"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108140_group"><span tabindex="-1" id="label_9_77">2023 July</span></p><ul id="random67b9a3dc3108140_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_78"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2845" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2845" data-node-key="2845" data-node-type="20"><a tabindex="-1" id="label_10_78" title="Data Science &amp; Analytics - IT3080  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2845">Data Science &amp; Analytics - IT3080  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_79"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2846" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2846" data-node-key="2846" data-node-type="20"><a tabindex="-1" id="label_10_79" title="Bussiness Management for IT - IT3090  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2846">Bussiness Management for IT - IT3090  [2023/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_80"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_2847" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_2847" data-node-key="2847" data-node-type="20"><a tabindex="-1" id="label_10_80" title="Industry Placement - IT3110  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2847">Industry Placement - IT3110  [2023/JUL]</a></p></li></ul></li></ul></li><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_81"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108141_group"><span tabindex="-1" id="label_8_81">2024</span></p><ul id="random67b9a3dc3108141_group" role="group" aria-hidden="true"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_82"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108142_group"><span tabindex="-1" id="label_9_82">2024 July</span></p><ul id="random67b9a3dc3108142_group" role="group" aria-hidden="true"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_83"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_4747" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_4747" data-node-key="4747" data-node-type="20"><a tabindex="-1" id="label_10_83" title="Human Computer Interaction - IT3060  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4747">Human Computer Interaction - IT3060  [2024/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_84"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_4748" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_4748" data-node-key="4748" data-node-type="20"><a tabindex="-1" id="label_10_84" title="Information Assurance &amp; Security - IT3070  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4748">Information Assurance &amp; Security - IT3070  [20...</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_85"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_4749" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_4749" data-node-key="4749" data-node-type="20"><a tabindex="-1" id="label_10_85" title="Data Science &amp; Analytics - IT3080  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4749">Data Science &amp; Analytics - IT3080  [2024/JUL]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_86"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_4750" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_4750" data-node-key="4750" data-node-type="20"><a tabindex="-1" id="label_10_86" title="Business Management for IT - IT3090  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4750">Business Management for IT - IT3090  [2024/JUL]</a></p></li></ul></li></ul></li><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_87"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108143_group"><span tabindex="-1" id="label_8_87">2025</span></p><ul id="random67b9a3dc3108143_group" role="group"><li class="type_unknown depth_9 contains_branch" aria-labelledby="label_9_88"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108144_group"><span tabindex="-1" id="label_9_88">2025 February</span></p><ul id="random67b9a3dc3108144_group" role="group"><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_89"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_6069" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_6069" data-node-key="6069" data-node-type="20"><a tabindex="-1" id="label_10_89" title="IT3010 - Network Design and Management  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6069">IT3010 - Network Design and Management  [2025/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_90"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_6070" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_6070" data-node-key="6070" data-node-type="20"><a tabindex="-1" id="label_10_90" title="IT3020 - Database Systems  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6070">IT3020 - Database Systems  [2025/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_91"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108145_group"><a tabindex="-1" id="label_10_91" title="IT3030 - Programming Applications and Frameworks  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6071">IT3030 - Programming Applications and Frameworks  ...</a></p><ul id="random67b9a3dc3108145_group" role="group"><li class="type_container depth_11 contains_branch" aria-labelledby="label_11_92"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108146_group"><a tabindex="-1" id="label_11_92" href="https://courseweb.sliit.lk/user/index.php?id=6071">Participants</a></p><ul id="random67b9a3dc3108146_group" role="group" aria-hidden="true"><li class="type_user depth_12 item_with_icon" aria-labelledby="label_12_93"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_12_93" href="https://courseweb.sliit.lk/user/view.php?id=12524&amp;course=6071"><img class="icon navicon" alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/navigationitem" /><span class="item-content-wrap">IT22304506 WBWMRK ALUWIHARE</span></a></p></li></ul></li><li class="type_setting depth_11 item_with_icon" aria-labelledby="label_11_94"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_11_94" href="https://courseweb.sliit.lk/badges/view.php?type=2&amp;id=6071"><img class="icon navicon" alt="Badges" title="Badges" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/badge" /><span class="item-content-wrap">Badges</span></a></p></li><li class="type_setting depth_11 item_with_icon" aria-labelledby="label_11_95"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_11_95" href="https://courseweb.sliit.lk/grade/report/index.php?id=6071"><img class="icon navicon" alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/grades" /><span class="item-content-wrap">Grades</span></a></p></li><li class="type_structure depth_11 contains_branch" aria-labelledby="label_11_96"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_65544" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_65544" data-node-key="65544" data-node-type="30"><span tabindex="-1" id="label_11_96">IT3030 - Programming Applications and Frameworks</span></p></li><li class="type_structure depth_11 contains_branch" aria-labelledby="label_11_97"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_65545" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_65545" data-node-key="65545" data-node-type="30"><span tabindex="-1" id="label_11_97">3 February - 9 February</span></p></li><li class="type_structure depth_11 contains_branch" aria-labelledby="label_11_98"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random67b9a3dc3108150_group"><span tabindex="-1" id="label_11_98">10 February - 16 February</span></p><ul id="random67b9a3dc3108150_group" role="group"><li class="type_activity depth_12 item_with_icon" aria-labelledby="label_12_99"><p class="tree_item hasicon" role="treeitem"><a href="https://courseweb.sliit.lk/mod/resource/view.php?id=355040" id="label_12_99" class=""  tabindex="-1"  title="File" ><img class="icon navicon" alt="File" title="File" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/f/pdf-24" /><span class="item-content-wrap">Lecture Session 01 | Software Frameworks </span></a></p></li><li class="type_activity depth_12 item_with_icon" aria-labelledby="label_12_100"><p class="tree_item hasicon" role="treeitem"><a href="https://courseweb.sliit.lk/mod/resource/view.php?id=355041" id="label_12_100" class=""  tabindex="-1"  title="File" ><img class="icon navicon" alt="File" title="File" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/f/pdf-24" /><span class="item-content-wrap">Tutorial Session 01 | Software Frameworks</span></a></p></li><li class="type_activity depth_12 item_with_icon" aria-labelledby="label_12_101"><p class="tree_item hasicon" role="treeitem"><a href="https://courseweb.sliit.lk/mod/resource/view.php?id=355602" id="label_12_101" class=""  tabindex="-1"  title="File" ><img class="icon navicon" alt="File" title="File" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/f/pdf-24" /><span class="item-content-wrap">Tutorial Session 01 | Software Frameworks - Guide</span></a></p></li><li class="type_activity depth_12 item_with_icon current_branch" aria-labelledby="label_12_102"><p class="tree_item hasicon active_tree_node" role="treeitem"><a href="https://courseweb.sliit.lk/mod/resource/view.php?id=353049" id="label_12_102" class=""  tabindex="-1"  title="File" ><img class="icon navicon" alt="File" title="File" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/f/pdf-24" /><span class="item-content-wrap">Practical Sheet 01 | Version Controlling with Git - 1</span></a></p></li></ul></li><li class="type_structure depth_11 contains_branch" aria-labelledby="label_11_103"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_68941" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_68941" data-node-key="68941" data-node-type="30"><span tabindex="-1" id="label_11_103">17 February - 23 February</span></p></li></ul></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_104"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_6072" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_6072" data-node-key="6072" data-node-type="20"><a tabindex="-1" id="label_10_104" title="IT3040 - IT Project Management  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6072">IT3040 - IT Project Management  [2025/FEB]</a></p></li><li class="type_course depth_10 contains_branch" aria-labelledby="label_10_105"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_6073" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_6073" data-node-key="6073" data-node-type="20"><a tabindex="-1" id="label_10_105" title="IT3050 - Employability Skills Development - Seminar  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6073">IT3050 - Employability Skills Development - Semina...</a></p></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="type_unknown depth_3 contains_branch" aria-labelledby="label_3_106"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108155_group"><span tabindex="-1" id="label_3_106">Career Guidance</span></p><ul id="random67b9a3dc3108155_group" role="group" aria-hidden="true"><li class="type_course depth_4 contains_branch" aria-labelledby="label_4_107"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_6" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_6" data-node-key="6" data-node-type="20"><a tabindex="-1" id="label_4_107" title="Job Opportunities" href="https://courseweb.sliit.lk/course/view.php?id=6">Job Opportunities</a></p></li></ul></li><li class="type_unknown depth_3 contains_branch" aria-labelledby="label_3_108"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108156_group"><span tabindex="-1" id="label_3_108">Student Affairs</span></p><ul id="random67b9a3dc3108156_group" role="group" aria-hidden="true"><li class="type_course depth_4 contains_branch" aria-labelledby="label_4_109"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_15" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_15" data-node-key="15" data-node-type="20"><a tabindex="-1" id="label_4_109" title="Physical Education and Sports" href="https://courseweb.sliit.lk/course/view.php?id=15">Physical Education and Sports</a></p></li></ul></li><li class="type_unknown depth_3 contains_branch" aria-labelledby="label_3_110"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108157_group"><span tabindex="-1" id="label_3_110">Library</span></p><ul id="random67b9a3dc3108157_group" role="group" aria-hidden="true"><li class="type_course depth_4 contains_branch" aria-labelledby="label_4_111"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_18" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_18" data-node-key="18" data-node-type="20"><a tabindex="-1" id="label_4_111" title="Digital Library" href="https://courseweb.sliit.lk/course/view.php?id=18">Digital Library</a></p></li></ul></li><li class="type_unknown depth_3 contains_branch" aria-labelledby="label_3_112"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108158_group"><span tabindex="-1" id="label_3_112">Faculty of Humanities &amp; Sciences</span></p><ul id="random67b9a3dc3108158_group" role="group" aria-hidden="true"><li class="type_unknown depth_4 contains_branch" aria-labelledby="label_4_113"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108159_group"><span tabindex="-1" id="label_4_113">Support Service</span></p><ul id="random67b9a3dc3108159_group" role="group" aria-hidden="true"><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_114"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_33" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_33" data-node-key="33" data-node-type="20"><a tabindex="-1" id="label_5_114" title="Faculty Notices" href="https://courseweb.sliit.lk/course/view.php?id=33">Faculty Notices</a></p></li><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_115"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_34" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_34" data-node-key="34" data-node-type="20"><a tabindex="-1" id="label_5_115" title="Examination Notices" href="https://courseweb.sliit.lk/course/view.php?id=34">Examination Notices</a></p></li><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_116"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_61" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_61" data-node-key="61" data-node-type="20"><a tabindex="-1" id="label_5_116" title="Department of Science and Education" href="https://courseweb.sliit.lk/course/view.php?id=61">Department of Science and Education</a></p></li></ul></li><li class="type_unknown depth_4 contains_branch" aria-labelledby="label_4_117"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108160_group"><span tabindex="-1" id="label_4_117">B.Sc. (Hons) Biotechnology</span></p><ul id="random67b9a3dc3108160_group" role="group" aria-hidden="true"><li class="type_unknown depth_5 contains_branch" aria-labelledby="label_5_118"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108161_group"><span tabindex="-1" id="label_5_118">3rd Year</span></p><ul id="random67b9a3dc3108161_group" role="group" aria-hidden="true"><li class="type_unknown depth_6 contains_branch" aria-labelledby="label_6_119"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108162_group"><span tabindex="-1" id="label_6_119">1st Semester</span></p><ul id="random67b9a3dc3108162_group" role="group" aria-hidden="true"><li class="type_unknown depth_7 contains_branch" aria-labelledby="label_7_120"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108163_group"><span tabindex="-1" id="label_7_120">2024</span></p><ul id="random67b9a3dc3108163_group" role="group" aria-hidden="true"><li class="type_unknown depth_8 contains_branch" aria-labelledby="label_8_121"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random67b9a3dc3108164_group"><span tabindex="-1" id="label_8_121">2024 July</span></p><ul id="random67b9a3dc3108164_group" role="group" aria-hidden="true"><li class="type_course depth_9 contains_branch" aria-labelledby="label_9_122"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_4523" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_4523" data-node-key="4523" data-node-type="20"><a tabindex="-1" id="label_9_122" title="Plant Pests and Diseases - SC3253  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4523">Plant Pests and Diseases - SC3253  [2024/JUL]</a></p></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-2"></span></aside>    <div id="sidebar-btn"><span></span><span></span><span></span></div>
+</div>
+
+<div id="wrapper">
+
+
+
+<header id="page-header" class="clearfix">              	
+		<div class="container-fluid">    
+	<div class="row-fluid">
+
+				<div class="span6">
+			<div class="logo-header">
+				<a class="logo" href="https://courseweb.sliit.lk" title="Home">
+					<img src="//courseweb.sliit.lk/pluginfile.php/1/theme_lambda/logo/1736872561/CourseWeb-%20Logo.jpg" class="img-responsive" alt="logo" />				</a>
+			</div>
+		</div>
+		      	
+
+		<div class="span6 login-header">
+			<div class="profileblock">
+
+				<div id="loggedin-user"><div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="12524"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link"
+        data-region="popover-region-toggle"
+        role="button"
+        aria-controls="popover-region-container-67b9a3dc34aff67b9a3dc3108168"
+        aria-haspopup="true"
+        aria-label="Show notification window with no new notifications"
+        tabindex="0">
+                <img class="icon " alt="Toggle notifications menu" title="Toggle notifications menu" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/notifications" />
+        <div class="count-container " data-region="count-container"
+        aria-label="There are 35 unread notifications">35</div>
+
+    </div>
+    <div 
+        id="popover-region-container-67b9a3dc34aff67b9a3dc3108168"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Notification window"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notifications</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button"
+           href="#"
+           title="Mark all as read"
+           data-action="mark-all-read"
+           role="button"
+           aria-label="Mark all as read">
+            <span class="normal-icon"><img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/t/markasread" /></span>
+            <span class="loading-icon icon-no-margin"><img class="icon " alt="Loading" title="Loading" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/loading" /></span>
+        </a>
+        <a href="https://courseweb.sliit.lk/message/notificationpreferences.php?userid=12524"
+           title="Notification preferences"
+           aria-label="Notification preferences">
+            <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/settings" />
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">You have no notifications</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><img class="icon " alt="Loading" title="Loading" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/loading" /></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://courseweb.sliit.lk/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">See all</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-0" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar d-flex " id="action-menu-0-menubar" role="menubar">
+
+            
+
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="javascript:void(0)" tabindex="0" class="d-inline-block  dropdown-toggle icon-no-margin" id="action-menu-toggle-0" aria-label="User menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-0-menu">
+                            
+                            <span class="userbutton"><span class="usertext mr-1">IT22304506 WBWMRK ALUWIHARE</span><span class="avatars"><span class="avatar current"><img src="https://courseweb.sliit.lk/pluginfile.php/55405/user/icon/lambda/f2?rev=22074" class="userpicture" width="35" height="35" alt="" /></span></span></span>
+                                
+                            <div class="caret"></div>
+                        </a>
+                            <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="action-menu-0-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-0" role="menu" data-align="tr-br">
+                                        <a href="https://courseweb.sliit.lk/my/" class="dropdown-item menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1">
+                                                <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/dashboard" />
+                                            <span class="menu-action-text" id="actionmenuaction-1">
+                                                Dashboard
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://courseweb.sliit.lk/user/profile.php?id=12524" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2">
+                                                <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/user" />
+                                            <span class="menu-action-text" id="actionmenuaction-2">
+                                                Profile
+                                            </span>
+                                        </a>
+                                        <a href="https://mysignins.microsoft.com/security-info/password/change" class="dropdown-item menu-action" role="menuitem" data-title="Change-Password" aria-labelledby="actionmenuaction-3">
+                                                <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/permissions" />
+                                            <span class="menu-action-text" id="actionmenuaction-3">
+                                                Change Password
+                                            </span>
+                                        </a>
+                                        <a href="https://courseweb.sliit.lk/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-4">
+                                                <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/t/preferences" />
+                                            <span class="menu-action-text" id="actionmenuaction-4">
+                                                Preferences
+                                            </span>
+                                        </a>
+                                        <a href="https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https%3A%2F%2Fcourseweb.sliit.lk%2Flogin%2Flogout.php" class="dropdown-item menu-action" role="menuitem" data-title="Logout" aria-labelledby="actionmenuaction-5">
+                                                <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/a/logout" />
+                                            <span class="menu-action-text" id="actionmenuaction-5">
+                                                Logout
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://courseweb.sliit.lk/login/logout.php?sesskey=7ocObxe9cS" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-6">
+                                                <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/a/logout" />
+                                            <span class="menu-action-text" id="actionmenuaction-6">
+                                                Log out
+                                            </span>
+                                        </a>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+
+</div></div><a href="https://courseweb.sliit.lk/user/view.php?id=12524&amp;course=6071" class="d-inline-block aabtn"><img src="https://courseweb.sliit.lk/pluginfile.php/55405/user/icon/lambda/f1?rev=22074" class="welcome_userpicture" width="80" height="80" alt="Picture of IT22304506 WBWMRK ALUWIHARE" title="Picture of IT22304506 WBWMRK ALUWIHARE" /></a></div>
+						</div>
+					</div>
+
+				</div>
+			</div>               
+</header>
+<header class="navbar">
+    <nav class="navbar-inner">
+        <div class="lambda-custom-menu container-fluid">
+            <a class="brand" href="https://courseweb.sliit.lk">Home</a>            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav"><li class="dropdown"><a href="#cm_submenu_1" class="dropdown-toggle" data-toggle="dropdown">Programmes<div class="caret"></div></a><ul class="dropdown-menu"><li class="dropdown-submenu"><a href="#cm_submenu_2" class="dropdown-toggle" data-toggle="dropdown">Orientation Programme</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=14"><b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=48">Campus Navigator - CN2021</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=691">Communication Skills - EN0013</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=16">Computational Thinking and 21st Century Skills - IT0010</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=14">Foundational Mathematics I - MA0014</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=973">General Business Knowledge - GBK003</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=972">Principles of Accounting - PA001</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=15">Principles of Economics - PE002</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1675">Business Proposal</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2751">Digital Hygiene Bootcamp</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Computing</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=5"><b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=27"> Information Technology (SLIIT)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1592"> Computer Science (SLIIT)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1597"> Computer Systems Engineering (SLIIT)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=125"> Computer System Networks (Curtin)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=141"> Information Technology / Software Engineering (Curtin)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1587"> Information Technology (UOQ)</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Business</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=8"><b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=160"> Business Management (SLIIT)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=244"> Business Management (LJMU)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=251"> Business Management (QU)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=927"> Business Management (Curtin)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1747"> Fashion Business and Management (MMU)</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Engineering</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=7"> <b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=254"> Engineering (SLIIT)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=115"> Engineering (Curtin)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=116"> Quantity Surveying</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Humanities & Sciences</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=10"><b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=119"> Biological Sciences</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=120"> Biotechnology</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=121"> English</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=122"> Financial Mathematics and Applied Statistics</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1481"> Information Technology</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=124"> Law</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=123"> Nursing</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=149"> Physical Sciences</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=148"> Psychology</a></li><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Postgraduate Diploma in Education</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=170"> Sinhala Medium</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2041"> English Medium</a></li></ul><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1486"> Social Sciences</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=1661">Professional Certificate in CLIL</a></li></ul><li class="dropdown-submenu"><a href="#cm_submenu_8" class="dropdown-toggle" data-toggle="dropdown">Architecture</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=9"><b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=117">Architecture</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2338">Interior Design</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Graduate Studies</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=11"><b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=470"> Information Technology</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=481"> Information Systems</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=492"> Information Management</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=503"> Enterprise Application Development</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=514"> Cyber Security</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=525"> MBA</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2743"> Architecture</a></li><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Master of Education</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2044"> Sinhala Medium</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2045"> English Medium</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2070"> Tamil Medium</a></li></ul><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=2067">PhD in Business Administration</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">SLIIT International Programmes</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=13"><b>Overview</b></a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=405">Computing (Curtin)</a></li><li><a href="https://courseweb.sliit.lk/course/index.php?categoryid=406">Engineering (Curtin)</a></li></ul></ul><li class="dropdown"><a href="#cm_submenu_12" class="dropdown-toggle" data-toggle="dropdown">Support<div class="caret"></div></a><ul class="dropdown-menu"><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Faculties</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=25">Faculty of Computing</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=28">School of Business</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=29">Faculty of Engineering</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=32">School of Architecture</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=33">Faculty of Humanities & Sciences</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=36">Faculty of Graduate Studies</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=926">SLIIT International</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=4617&amp;section=1">Global Pathways</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Student Affairs</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/mod/forum/view.php?id=281636"> MOE IFSLS Notices</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=17">Student Manuals</a></li><li><a href="https://support.sliit.lk">Student Helpdesk</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Examinations</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=3&amp;section=1">Examination Timetables and Hall Arrangements</a></li><li><a href="https://student360.sliit.lk"  target="_blank">Examination Results</a></li><li class="divider">&nbsp;</li><li><a href="#"><b>Notices <i class="fa fa-sort-desc" aria-hidden="true"></i></b></a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=26"><small><i class="fa fa-check" aria-hidden="true"></i> Faculty of Computing</small></a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=27"><small><i class="fa fa-check" aria-hidden="true"></i> School of Business</small></a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=30"><small><i class="fa fa-check" aria-hidden="true"></i> Faculty of Engineering</small></a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=31"><small><i class="fa fa-check" aria-hidden="true"></i> School of Architecture</small></a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=34"><small><i class="fa fa-check" aria-hidden="true"></i> Faculty of Humanities & Sciences</small></a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=35"><small><i class="fa fa-check" aria-hidden="true"></i> Faculty of Graduate Studies and Research </small></a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Student IT Services</a><ul class="dropdown-menu"><li><a href="https://itsd.sliit.lk"  target="_blank">ITSD Portal</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=68">IT Guidebook</a></li></ul><li class="dropdown-submenu"><a href="#cm_submenu_17" class="dropdown-toggle" data-toggle="dropdown">Research</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=4369">FoC Research</a></li></ul><li><a href="https://courseweb.sliit.lk/course/view.php?id=2317">Clubs and Societies</a></li><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Career Guidance</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=37">How to</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=162">Events</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=6">Job Opportunities</a></li></ul><li class="dropdown-submenu"><a href="#cm_submenu_19" class="dropdown-toggle" data-toggle="dropdown">Timetables</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=4&amp;section=1">Semester Timetables</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=3&amp;section=1">Examination Timetables and Hall Arrangements</a></li></ul><li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Physical Education and Sport</a><ul class="dropdown-menu"><li><a href="https://courseweb.sliit.lk/course/view.php?id=15">News</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=38&amp;section=1">Sports Council</a></li></ul><li><a href="https://courseweb.sliit.lk/mod/page/view.php?id=147">Student Shuttle Service</a></li></ul><li class="dropdown"><a href="#cm_submenu_21" class="dropdown-toggle" data-toggle="dropdown">Resources<div class="caret"></div></a><ul class="dropdown-menu"><li><a href="https://www.autodesk.com/education/home"  target="_blank">Autodesk</a></li><li><a href="https://aws.amazon.com/education/awseducate"  target="_blank">AWS Educate</a></li><li><a href="https://www.netacad.com/login"  target="_blank">Cisco Network Academy</a></li><li><a href="https://lecturecapture.sliit.lk"  target="_blank">Eduscope</a></li><li><a href="https://education.github.com/pack"  target="_blank">GitHub Student Developer Pack</a></li><li><a href="https://www.jetbrains.com"  target="_blank">JetBrains IDEs</a></li><li><a href="https://azureforeducation.microsoft.com/devtools"  target="_blank">Microsoft Imagine</a></li><li><a href="https://imagineacademy.microsoft.com/?whr=default%22%20%20target%3D%22_blank">Microsoft Imagine Academy</a></li><li><a href="https://turnitin.com/login_page.asp?lang=en_us%22%20%20target%3D%22_blank">Turnitin</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=1204">SLIIT Virtual Lab <i class="fa fa-desktop pull-right" aria-hidden="true"></i></a></li><li class="divider">&nbsp;</li><li><a href="https://courseweb.sliit.lk/course/view.php?id=21"> Guideline for Resources <i class="fa fa-info-circle pull-right" aria-hidden="true"></i></a></li></ul><li class="dropdown"><a href="#cm_submenu_22" class="dropdown-toggle" data-toggle="dropdown">Libraries<div class="caret"></div></a><ul class="dropdown-menu"><li><a href="https://library.sliit.lk"  target="_blank">SLIIT Online Library</a></li><li><a href="https://courseweb.sliit.lk/course/view.php?id=18">Digital Library</a></li><li><a href="https://rda.sliit.lk"  target="_blank">Research & Publication</a></li></ul><li class="dropdown"><a href="#cm_submenu_23" class="dropdown-toggle" data-toggle="dropdown">Email<div class="caret"></div></a><ul class="dropdown-menu"><li><a href="https://portal.office.com"  target="_blank">Microsoft Outlook (O365)</a></li><li><a href="https://gmail.com"  target="_blank">G-Mail (G Suite)</a></li><li class="divider">&nbsp;</li><li><a href="https://courseweb.sliit.lk/course/view.php?id=68&amp;section=3">Help <i class="fa fa-info-circle pull-right" aria-hidden="true"></i></a></li></ul><li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" title="My courses">My courses<div class="caret"></div></a><ul class="dropdown-menu"><li><a title="Digital Library" href="https://courseweb.sliit.lk/course/view.php?id=18">Digital Library</a></li><li><a title="Physical Education and Sports" href="https://courseweb.sliit.lk/course/view.php?id=15">Physical Education and Sports</a></li><li><a title="Faculty Notices" href="https://courseweb.sliit.lk/course/view.php?id=25">Faculty Notices</a></li><li><a title="Job Opportunities" href="https://courseweb.sliit.lk/course/view.php?id=6">Job Opportunities</a></li><li><a title="Department of Science and Education" href="https://courseweb.sliit.lk/course/view.php?id=61">Department of Science and Education</a></li><li><a title="Examination Notices" href="https://courseweb.sliit.lk/course/view.php?id=34">Examination Notices</a></li><li><a title="Faculty Notices" href="https://courseweb.sliit.lk/course/view.php?id=33">Faculty Notices</a></li><li><a title="Examination Notices" href="https://courseweb.sliit.lk/course/view.php?id=26">Examination Notices</a></li><li><a title="Introduction to Programming - IT1010  [2022/OCT]" href="https://courseweb.sliit.lk/course/view.php?id=1177">Introduction to Programming - IT1010  [2022/OCT]</a></li><li><a title="Introduction to Programming - IT1010  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=597">Introduction to Programming - IT1010  [2022/JUL]</a></li><li><a title="Introduction to Computer Systems - IT1020  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=598">Introduction to Computer Systems - IT1020  [2022/JUL]</a></li><li><a title="Mathematics for Computing - IT1030  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=599">Mathematics for Computing - IT1030  [2022/JUL]</a></li><li><a title="Object Oriented Concepts - IT1050  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=601">Object Oriented Concepts - IT1050  [2022/JUL]</a></li><li><a title="Software Process Modeling - IT1060  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=602">Software Process Modeling - IT1060  [2022/JUL]</a></li><li><a title="Information Systems &amp; Data Modeling - IT1090  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=604">Information Systems & Data Modeling - IT1090  [2022/JUL]</a></li><li><a title="Internet and Web Technologies - IT1100  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=605">Internet and Web Technologies - IT1100  [2022/JUL]</a></li><li><a title="Object Oriented Programming - IT2030  [2022/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=609">Object Oriented Programming - IT2030  [2022/JUL]</a></li><li><a title="Object Oriented Concepts - IT1050  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1524">Object Oriented Concepts - IT1050  [2023/FEB]</a></li><li><a title="English for Academic Purposes - IT1080  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1526">English for Academic Purposes - IT1080  [2023/FEB]</a></li><li><a title="Information Systems &amp; Data Modeling - IT1090  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1527">Information Systems & Data Modeling - IT1090  [2023/FEB]</a></li><li><a title="Internet &amp; Web Technologies - IT1100  [2023/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=1528">Internet & Web Technologies - IT1100  [2023/FEB]</a></li><li><a title="Software Engineering - IT2020  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2817">Software Engineering - IT2020  [2023/JUL]</a></li><li><a title="Object Oriented Programming - IT2030  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2818">Object Oriented Programming - IT2030  [2023/JUL]</a></li><li><a title="Database Management Systems - IT2040  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2819">Database Management Systems - IT2040  [2023/JUL]</a></li><li><a title="Computer Networks - IT2050  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2820">Computer Networks - IT2050  [2023/JUL]</a></li><li><a title="Operating Systems and System Administration - IT2060  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2821">Operating Systems and System Administration - IT2060  [2023/JUL]</a></li><li><a title="Mobile Application Development - IT2010  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2833">Mobile Application Development - IT2010  [2023/JUL]</a></li><li><a title="Data Structures &amp; Algorithms - IT2070  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2834">Data Structures & Algorithms - IT2070  [2023/JUL]</a></li><li><a title="Professional Skills - IT2090  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2835">Professional Skills - IT2090  [2023/JUL]</a></li><li><a title="Employability  Skills Development - Seminar - IT2100  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2836">Employability  Skills Development - Seminar - IT2100  [2023/JUL]</a></li><li><a title="Probability &amp; Statistics - IT2110  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2837">Probability & Statistics - IT2110  [2023/JUL]</a></li><li><a title="Data Science &amp; Analytics - IT3080  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2845">Data Science & Analytics - IT3080  [2023/JUL]</a></li><li><a title="Bussiness Management for IT - IT3090  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2846">Bussiness Management for IT - IT3090  [2023/JUL]</a></li><li><a title="Industry Placement - IT3110  [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2847">Industry Placement - IT3110  [2023/JUL]</a></li><li><a title="Information Technology Project - IT2080 [2023/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=2366">Information Technology Project - IT2080 [2023/JUL]</a></li><li><a title="Mobile Application Development - IT2010  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3931">Mobile Application Development - IT2010  [2024/FEB]</a></li><li><a title="Data Structures &amp; Algorithms - IT2070  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3932">Data Structures & Algorithms - IT2070  [2024/FEB]</a></li><li><a title="Information Technology Project - IT2080 [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3521">Information Technology Project - IT2080 [2024/FEB]</a></li><li><a title="Professional Skills - IT2090  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3933">Professional Skills - IT2090  [2024/FEB]</a></li><li><a title="Employability  Skills Development  - IT2100  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3934">Employability  Skills Development  - IT2100  [2024/FEB]</a></li><li><a title="Probability &amp; Statistics - IT2110  [2024/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=3935">Probability & Statistics - IT2110  [2024/FEB]</a></li><li><a title="Plant Pests and Diseases - SC3253  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4523">Plant Pests and Diseases - SC3253  [2024/JUL]</a></li><li><a title="Human Computer Interaction - IT3060  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4747">Human Computer Interaction - IT3060  [2024/JUL]</a></li><li><a title="Information Assurance &amp; Security - IT3070  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4748">Information Assurance & Security - IT3070  [2024/JUL]</a></li><li><a title="Data Science &amp; Analytics - IT3080  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4749">Data Science & Analytics - IT3080  [2024/JUL]</a></li><li><a title="Business Management for IT - IT3090  [2024/JUL]" href="https://courseweb.sliit.lk/course/view.php?id=4750">Business Management for IT - IT3090  [2024/JUL]</a></li><li><a title="IT3010 - Network Design and Management  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6069">IT3010 - Network Design and Management  [2025/FEB]</a></li><li><a title="IT3020 - Database Systems  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6070">IT3020 - Database Systems  [2025/FEB]</a></li><li><a title="IT3030 - Programming Applications and Frameworks  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6071">IT3030 - Programming Applications and Frameworks  [2025/FEB]</a></li><li><a title="IT3040 - IT Project Management  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6072">IT3040 - IT Project Management  [2025/FEB]</a></li><li><a title="IT3050 - Employability Skills Development - Seminar  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6073">IT3050 - Employability Skills Development - Seminar  [2025/FEB]</a></li></ul></ul>                <ul class="nav pull-right">
+                    <li></li>
+                </ul>
+                
+                                
+                                <form id="search" action="https://courseweb.sliit.lk/course/search.php" >
+                	<label for="coursesearchbox" class="lambda-sr-only">Search courses</label>						
+					<input id="coursesearchbox" type="text" onFocus="if(this.value =='Search courses' ) this.value=''" onBlur="if(this.value=='') this.value='Search courses'" value="Search courses" name="search" >
+					<button type="submit"><span class="lambda-sr-only">Submit</span></button>						
+				</form>
+                                
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Start Main Regions -->
+<div id="page" class="container-fluid">
+
+    <div id ="page-header-nav" class="clearfix">
+    	        <div id="page-navbar" class="clearfix">
+            <div class="breadcrumb-nav"><span class="accesshide" id="navbar-label">Page path</span><nav aria-labelledby="navbar-label"><ul class="breadcrumb"><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/my/"><span itemprop="title">Dashboard</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span tabindex="0">My courses</span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/course/index.php?categoryid=4"><span itemprop="title">Faculty of Computing</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/course/index.php?categoryid=27"><span itemprop="title">B.Sc (Hons) Information Technology (SLIIT)</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/course/index.php?categoryid=52"><span itemprop="title">3rd Year</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/course/index.php?categoryid=54"><span itemprop="title">1st Semester</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/course/index.php?categoryid=65"><span itemprop="title">Information Technology</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/course/index.php?categoryid=2610"><span itemprop="title">2025</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://courseweb.sliit.lk/course/index.php?categoryid=2611"><span itemprop="title">2025 February</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" title="IT3030 - Programming Applications and Frameworks  [2025/FEB]" href="https://courseweb.sliit.lk/course/view.php?id=6071"><span itemprop="title">IT3030 - Programming Applications and Frameworks  ...</span></a></span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><span tabindex="0">10 February - 16 February</span> <span class="divider"> <span class="accesshide " ><span class="arrow_text">/</span>&nbsp;</span><span class="arrow sep">&#x25BA;</span> </span></li><li><a href="https://courseweb.sliit.lk/mod/resource/view.php?id=353049" id="label_12_102" class=""  tabindex="-1"  title="File" >Practical Sheet 01 | Version Controlling with Git - 1</a></li></ul></nav></div>
+            <nav class="breadcrumb-button"></nav>
+        </div>
+            </div>
+
+    <div id="page-content" class="row-fluid">
+        <div id="region-bs-main-and-pre" class="span9">
+            <div class="row-fluid">
+            	                <section id="region-main" class="span8">
+                                    <span class="notifications" id="user-notifications"></span><div role="main"><span id="maincontent"></span><h2>Practical Sheet 01 | Version Controlling with Git - 1</h2><div id="resourceintro" class="box py-3 mod_introbox"><p class="resourcedetails">357.4KB PDF document Modified 17/02/25, 02:49</p></div><div class="resourceworkaround">Click <a href="https://courseweb.sliit.lk/pluginfile.php/428743/mod_resource/content/4/IT3030-PAF_Lab01-GitP1.pdf" onclick="window.open('https://courseweb.sliit.lk/pluginfile.php/428743/mod_resource/content/4/IT3030-PAF_Lab01-GitP1.pdf', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false;">IT3030-PAF_Lab01-GitP1.pdf</a> link to view the file.</div></div><div class="mt-5 mb-1 activity-navigation container-fluid">
+<div class="row">
+    <div class="col-md-4">        <div class="float-left">
+                <a href="https://courseweb.sliit.lk/mod/resource/view.php?id=355602&forceview=1" id="prev-activity-link" class="btn btn-link"  title="Tutorial Session 01 | Software Frameworks - Guide" >&#x25C4; Tutorial Session 01 | Software Frameworks - Guide</a>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="mdl-align">
+            <div class="urlselect">
+    <form method="post" action="https://courseweb.sliit.lk/course/jumpto.php" class="form-inline" id="url_select_f67b9a3dc3108177">
+        <input type="hidden" name="sesskey" value="7ocObxe9cS">
+            <label for="jump-to-activity" class="sr-only">
+                Jump to...
+            </label>
+        <select  id="jump-to-activity" class="custom-select urlselect" name="jump"
+                 >
+                    <option value="" selected>Jump to...</option>
+                    <option value="/mod/resource/view.php?id=347469&amp;forceview=1" >Module Outline</option>
+                    <option value="/mod/resource/view.php?id=355040&amp;forceview=1" >Lecture Session 01 | Software Frameworks </option>
+                    <option value="/mod/resource/view.php?id=355041&amp;forceview=1" >Tutorial Session 01 | Software Frameworks</option>
+                    <option value="/mod/resource/view.php?id=355602&amp;forceview=1" >Tutorial Session 01 | Software Frameworks - Guide</option>
+                    <option value="/mod/resource/view.php?id=355042&amp;forceview=1" >Practical Sheet 02 | Version Controlling with Git - 2</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary ml-1" value="Go">
+            </noscript>
+    </form>
+</div>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="float-right">
+                <a href="https://courseweb.sliit.lk/mod/resource/view.php?id=355042&forceview=1" id="next-activity-link" class="btn btn-link"  title="Practical Sheet 02 | Version Controlling with Git - 2" >Practical Sheet 02 | Version Controlling with Git - 2 &#x25BA;</a>
+
+        </div>
+</div>
+</div>
+</div>                </section>
+                            </div>
+        </div>
+        <aside id="block-region-side-post" class="span3 block-region" data-blockregion="side-post" data-droptarget="1"><section id="inst411"
+     class=" block_html block blank  card mb-3"
+     role="complementary"
+     data-block="html"
+        aria-label="HTML"
+>
+
+    <div class="card-body p-3">
+
+
+
+        <div class="card-text content mt-3">
+            <div class="no-overflow"><p><img src="https://courseweb.sliit.lk/pluginfile.php/895/block_html/content/computing_sm.png" alt="" role="presentation" class="img-responsive atto_image_button_text-bottom" width="194" height="40"></p>
+<div class="row-fluid common-link-array">
+    <div class="text-center link-ico span6"><a href="/course/view.php?id=25">
+        <img src="https://courseweb.sliit.lk/pluginfile.php/895/block_html/content/faculty-noices.png?time=1655539576927" alt="Faculty Notices" role="presentation" class="img-responsive atto_image_button_text-bottom" width="54" height="55">
+      <p style="font-size: 12px;color:#000">Faculty Notices</p>
+      </a>
+    </div>
+    <div class="text-center link-ico span6">
+        <a href="/course/view.php?id=26">
+        <img src="https://courseweb.sliit.lk/pluginfile.php/895/block_html/content/exam-notice.png?time=1655539600923" alt="Exam Notices" role="presentation" class="img-responsive atto_image_button_text-bottom" width="54" height="55">
+      <p style="font-size: 12px;color:#000">Examination Notices</p>
+      </a>
+    </div>
+</div>
+
+<div class="row-fluid common-link-array">
+    <div class="text-center link-ico span4"><a href="https://lecturecapture.sliit.lk " target="_blank " class=" " style="border-radius:180px;width:90px; " title="Eduscope ">
+          <img src="https://courseweb.sliit.lk/pluginfile.php/895/block_html/content/EduscopeIco.png?time=1655539625220" alt=" " role="presentation" class="img-responsive atto_image_button_text-bottom" width="35" height="36">
+        <p style="font-size: 11px;color:#000 ">Lecture Videos</p>
+       </a>
+    </div>
+
+    <div class="text-center link-ico span4">
+        <a href="https://library.sliit.lk " target="_blank " style="border-radius:180px;width:25px; " title="Library ">
+        <img src="https://courseweb.sliit.lk/pluginfile.php/895/block_html/content/library.png?time=1655539647700" alt=" " role="presentation" class="img-responsive atto_image_button_text-bottom" width="35" height="36">
+          <p style="font-size: 11px;color:#000 ">Library</p>
+      </a>
+    </div>
+    <div class="link-ico text-center span4">
+        <a href="https://rda.sliit.lk " target="_blank " style="border-radius:180px;width:25px; " title="Research Data Archive ">
+        <img src="https://courseweb.sliit.lk/pluginfile.php/895/block_html/content/RDAIco.png?time=1655539668384" alt=" " role="presentation" class="img-responsive atto_image_button_text-bottom" width="35" height="36">
+          <p style="font-size: 11px;color:#000 ">Research<br></p>
+      </a>
+    </div>
+
+</div></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section><section id="inst5630"
+     class=" block_html block blank  card mb-3"
+     role="complementary"
+     data-block="html"
+        aria-label="HTML"
+>
+
+    <div class="card-body p-3">
+
+
+
+        <div class="card-text content mt-3">
+            <div class="no-overflow"><strong>INFORMATION ON<br></strong>
+<span style="text-align: left;font-size:2.2rem"><strong>UNOFFICIAL EXAM RESULTS</strong></span>
+
+
+<center> <a class="btn btn-info" style="margin:10px 0;width:80%;border-radius:10px 10px;" href="/course/view.php?id=1126">View Results&nbsp; <i class="fa fa-info-circle" aria-hidden="true"></i></a></center></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section><section id="inst459"
+     class=" block_html block blank  card mb-3"
+     role="complementary"
+     data-block="html"
+        aria-label="HTML"
+>
+
+    <div class="card-body p-3">
+
+
+
+        <div class="card-text content mt-3">
+            <div class="no-overflow"><p dir="ltr" style="text-align: left;"><strong>ACADEMIC<br></strong></p>
+<p style="text-align: left;font-size:2.2rem"><strong>TIMETABLE</strong></p>
+
+<center> <a class="btn btn-danger" style="margin:10px 0;width:80%;border-radius:10px 10px;" href="/course/view.php?id=4&amp;section=2" target="_blank">View Timetable&nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>
+</a></center></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section></aside>    </div>
+    
+    <!-- End Main Regions -->
+
+    <a href="#top" class="back-to-top"><span class="lambda-sr-only">Back</span></a>
+
+	</div>
+		<footer id="page-footer" class="container-fluid">
+			<div class="row-fluid">
+		<aside id="block-region-footer-left" class="span4 block-region" data-blockregion="footer-left" data-droptarget="1"><section id="inst31"
+     class=" block_html block blank  card mb-3"
+     role="complementary"
+     data-block="html"
+        aria-label="HTML"
+>
+
+    <div class="card-body p-3">
+
+
+
+        <div class="card-text content mt-3">
+            <div class="no-overflow"><p dir="ltr" style="text-align: left;"><strong>DO YOU NEED ANY</strong></p>
+<p style="text-align: left;font-size:2.0rem"><strong>SUPPORT ?</strong></p>
+<p dir="ltr" style="text-align: left;"><span class="fa fa-globe"></span> <a href="https://support.sliit.lk" target="_blank">support.sliit.lk</a></p>
+<p dir="ltr" style="text-align: left;"><span class="fa fa-phone"></span> +94 11 754 4801</p>
+
+<a class="btn btn-defualt mt-6" href="https://www.sliit.lk/service-feedback-form/" target="_blank">  Provide Feedback to SLIIT</a></div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section></aside><aside id="block-region-footer-middle" class="span4 block-region" data-blockregion="footer-middle" data-droptarget="1"></aside><aside id="block-region-footer-right" class="span4 block-region" data-blockregion="footer-right" data-droptarget="1"><a href="#sb-7" class="sr-only sr-only-focusable">Skip Calendar</a>
+
+<section id="inst30"
+     class=" block_calendar_month block  card mb-3"
+     role="complementary"
+     data-block="calendar_month"
+          aria-labelledby="instance-30-header"
+     >
+
+    <div class="card-body p-3">
+
+            <h5 id="instance-30-header" class="card-title d-inline">Calendar</h5>
+
+
+        <div class="card-text content mt-3">
+            <div id="calendar-month-2025-2-67b9a3dc3394167b9a3dc3108165"  data-template="core_calendar/month_mini"  data-includenavigation="true" data-mini="true">
+    <div id="month-mini-2025-2-67b9a3dc3394167b9a3dc3108165" class="calendarwrapper" data-courseid="6071" data-categoryid="2611" data-month="2" data-year="2025" data-day="22" data-view="month">
+        <span class="overlay-icon-container hidden" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin"><img class="icon " alt="Loading" title="Loading" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/loading" /></span>
+        </span>
+        <table class="minicalendar calendartable">
+            <caption class="calendar-controls">
+                    <a href="#" class="arrow_link previous" title="Previous month" data-year="2025" data-month="1">
+                        <span class="arrow">&#x25C4;</span>
+                    </a>
+                    <span class="hide"> | </span>
+                    <span class="current">
+                        <a href="https://courseweb.sliit.lk/calendar/view.php?view=month&time=1740219356&course=6071" title="This month">February 2025</a>
+                    </span>
+                    <span class="hide"> | </span>
+                    <a href="#" class="arrow_link next" title="Next month" data-year="2025" data-month="3">
+                        <span class="arrow">&#x25BA;</span>
+                    </a>
+            </caption>
+            <thead>
+              <tr>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Monday</span>
+                        <span aria-hidden="true">Mon</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Tuesday</span>
+                        <span aria-hidden="true">Tue</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Wednesday</span>
+                        <span aria-hidden="true">Wed</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Thursday</span>
+                        <span aria-hidden="true">Thu</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Friday</span>
+                        <span aria-hidden="true">Fri</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Saturday</span>
+                        <span aria-hidden="true">Sat</span>
+                    </th>
+                    <th class="header text-xs-center">
+                        <span class="sr-only">Sunday</span>
+                        <span aria-hidden="true">Sun</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-region="month-view-week">
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="day text-center weekend" data-day-timestamp="1738348200"><span class="sr-only">No events, Saturday, 1 February</span>
+
+                                <span aria-hidden="true">1</span>
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1738434600"><span class="sr-only">No events, Sunday, 2 February</span>
+
+                                <span aria-hidden="true">2</span>
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1738521000"><span class="sr-only">No events, Monday, 3 February</span>
+
+                                <span aria-hidden="true">3</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1738607400"><span class="sr-only">No events, Tuesday, 4 February</span>
+
+                                <span aria-hidden="true">4</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1738693800"><span class="sr-only">No events, Wednesday, 5 February</span>
+
+                                <span aria-hidden="true">5</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1738780200"><span class="sr-only">No events, Thursday, 6 February</span>
+
+                                <span aria-hidden="true">6</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1738866600"><span class="sr-only">No events, Friday, 7 February</span>
+
+                                <span aria-hidden="true">7</span>
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1738953000"><span class="sr-only">No events, Saturday, 8 February</span>
+
+                                <span aria-hidden="true">8</span>
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1739039400"><span class="sr-only">No events, Sunday, 9 February</span>
+
+                                <span aria-hidden="true">9</span>
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1739125800"><span class="sr-only">No events, Monday, 10 February</span>
+
+                                <span aria-hidden="true">10</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1739212200"><span class="sr-only">No events, Tuesday, 11 February</span>
+
+                                <span aria-hidden="true">11</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1739298600"><span class="sr-only">No events, Wednesday, 12 February</span>
+
+                                <span aria-hidden="true">12</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1739385000"><span class="sr-only">No events, Thursday, 13 February</span>
+
+                                <span aria-hidden="true">13</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1739471400"><span class="sr-only">No events, Friday, 14 February</span>
+
+                                <span aria-hidden="true">14</span>
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1739557800"><span class="sr-only">No events, Saturday, 15 February</span>
+
+                                <span aria-hidden="true">15</span>
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1739644200"><span class="sr-only">No events, Sunday, 16 February</span>
+
+                                <span aria-hidden="true">16</span>
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1739730600"><span class="sr-only">No events, Monday, 17 February</span>
+
+                                <span aria-hidden="true">17</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1739817000"><span class="sr-only">No events, Tuesday, 18 February</span>
+
+                                <span aria-hidden="true">18</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1739903400"><span class="sr-only">No events, Wednesday, 19 February</span>
+
+                                <span aria-hidden="true">19</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1739989800"><span class="sr-only">No events, Thursday, 20 February</span>
+
+                                <span aria-hidden="true">20</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1740076200"><span class="sr-only">No events, Friday, 21 February</span>
+
+                                <span aria-hidden="true">21</span>
+                            </td>
+                        <td class="day text-center today weekend" data-day-timestamp="1740162600"><span class="sr-only">No events, Saturday, 22 February</span>
+                                    <a  id="calendar-day-popover-link-6071-2025-52-67b9a3dc3394167b9a3dc3108165" href="https://courseweb.sliit.lk/calendar/view.php?view=day&amp;time=1740162600&amp;course=6071" data-container="body" data-toggle="popover" data-html="true" data-region="mini-day-link" data-trigger="hover focus" data-placement="top" data-year="2025" data-month="2" data-courseid="6071" data-categoryid="2611" data-title="Today Saturday, 22 February" data-alternate="No events" aria-label="Today Saturday, 22 February">22</a>
+    <div class="hidden">
+        
+    </div>
+                            </td>
+                        <td class="day text-center weekend" data-day-timestamp="1740249000"><span class="sr-only">No events, Sunday, 23 February</span>
+
+                                <span aria-hidden="true">23</span>
+                            </td>
+                </tr>
+                <tr data-region="month-view-week">
+                        <td class="day text-center" data-day-timestamp="1740335400"><span class="sr-only">No events, Monday, 24 February</span>
+
+                                <span aria-hidden="true">24</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1740421800"><span class="sr-only">No events, Tuesday, 25 February</span>
+
+                                <span aria-hidden="true">25</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1740508200"><span class="sr-only">No events, Wednesday, 26 February</span>
+
+                                <span aria-hidden="true">26</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1740594600"><span class="sr-only">No events, Thursday, 27 February</span>
+
+                                <span aria-hidden="true">27</span>
+                            </td>
+                        <td class="day text-center" data-day-timestamp="1740681000"><span class="sr-only">No events, Friday, 28 February</span>
+
+                                <span aria-hidden="true">28</span>
+                            </td>
+                        <td class="dayblank">&nbsp;</td>
+                        <td class="dayblank">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div><div id="event-filter-67b9a3dc33e5d67b9a3dc3108166" class="calendar_filters mt-2">
+    <ul>
+            <li>
+                <a href="#" data-action="filter-event-type" data-eventtype="site" data-eventtype-hidden="">
+                        <span class="calendar_event_site">
+                            <img class="icon " alt="Hide site events" title="Hide site events" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/hide" />
+                        </span>
+                            <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/siteevent" />
+                        <span class="eventname">Hide site events</span>
+                
+                </a>
+            </li>
+            <li>
+                <a href="#" data-action="filter-event-type" data-eventtype="category" data-eventtype-hidden="">
+                        <span class="calendar_event_category">
+                            <img class="icon " alt="Hide category events" title="Hide category events" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/hide" />
+                        </span>
+                            <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/categoryevent" />
+                        <span class="eventname">Hide category events</span>
+                
+                </a>
+            </li>
+            <li>
+                <a href="#" data-action="filter-event-type" data-eventtype="course" data-eventtype-hidden="">
+                        <span class="calendar_event_course">
+                            <img class="icon " alt="Hide course events" title="Hide course events" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/hide" />
+                        </span>
+                            <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/courseevent" />
+                        <span class="eventname">Hide course events</span>
+                
+                </a>
+            </li>
+            <li>
+                <a href="#" data-action="filter-event-type" data-eventtype="group" data-eventtype-hidden="">
+                        <span class="calendar_event_group">
+                            <img class="icon " alt="Hide group events" title="Hide group events" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/hide" />
+                        </span>
+                            <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/groupevent" />
+                        <span class="eventname">Hide group events</span>
+                
+                </a>
+            </li>
+            <li>
+                <a href="#" data-action="filter-event-type" data-eventtype="user" data-eventtype-hidden="">
+                        <span class="calendar_event_user">
+                            <img class="icon " alt="Hide user events" title="Hide user events" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/hide" />
+                        </span>
+                            <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/userevent" />
+                        <span class="eventname">Hide user events</span>
+                
+                </a>
+            </li>
+            <li>
+                <a href="#" data-action="filter-event-type" data-eventtype="other" data-eventtype-hidden="">
+                        <span class="calendar_event_other">
+                            <img class="icon " alt="Hide other events" title="Hide other events" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/hide" />
+                        </span>
+                            <img class="icon " alt="" aria-hidden="true" src="https://courseweb.sliit.lk/theme/image.php/lambda/core/1736872561/i/otherevent" />
+                        <span class="eventname">Hide other events</span>
+                
+                </a>
+            </li>
+    </ul>
+</div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</section>
+
+  <span id="sb-7"></span></aside> 	</div>
+
+	<div class="footerlinks">
+    	<div class="row-fluid">
+    		<p class="helplink"></p>
+    		<div class="footnote"><p style="text-align:right;">Copyright 2022 © SLIIT. All Rights Reserved.</p></div>		</div>
+        
+            		
+	<div class="socials row-fluid">
+    
+        	<div class="span6">
+        	<div class="social_contact">
+                        <nobr><i class="far fa-bookmark"></i> &nbsp;<a href='https://www.sliit.lk' target="_blank" class="social_contact_web">https://www.sliit.lk</a></nobr>
+                                    <nobr><i class="far fa-envelope"></i> &nbsp;<a href='mailto:info@sliit.lk' class="social_contact_mail">info@sliit.lk</a></nobr>
+                                    <nobr><i class="fas fa-mobile-alt"></i> &nbsp;<a href='tel:+94 11 754 4801'>+94 11 754 4801</a></nobr>
+                        </div>
+        </div>
+        <div class="span6">
+                	<div class="social_icons pull-right">
+                <a class="social fab fa-facebook" href='https://www.facebook.com/sliit.lk' target='_blank'> </a>                                <a class="social fab fa-twitter" href='https://twitter.com/SLIITinfo' target='_blank'> </a>                                <a class="social fab fa-instagram" href='https://www.instagram.com/sliit.life/' target='_blank'> </a>                <a class="social fab fa-youtube" href='https://www.youtube.com/user/SLIITtube' target='_blank'> </a>                <a class="social fab fa-linkedin" href='https://www.linkedin.com/school/sliit/' target='_blank'> </a>                            </div>
+        </div>
+        
+    </div>
+    	        
+   	</div><div class="logininfo">You are logged in as <a href="https://courseweb.sliit.lk/user/profile.php?id=12524" title="View profile">IT22304506 WBWMRK ALUWIHARE</a> (<a href="https://courseweb.sliit.lk/login/logout.php?sesskey=7ocObxe9cS">Log out</a>)</div>	</footer>
+</div>
+<script>(function($) {
+ 	$(document).ready(function(){
+
+	var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+	});
+	jQuery('.back-to-top').click(function(event) {
+    	event.preventDefault();
+    	jQuery('html, body').animate({scrollTop: 0}, duration);
+    	return false;
+	});
+	
+	$(document).on('click', 'button[data-toggle="dropdown"], .action-menu a[data-toggle="dropdown"], .lambda-custom-menu .nav-collapse.in a[data-toggle="dropdown"], .ml-auto.dropdown a[data-toggle="dropdown"]', function(event) {
+		event.preventDefault();
+  		$(this).next('.dropdown-menu').slideToggle("fast");
+	});
+	$(document).on('click', function (e) {
+    	if(!$('button[data-toggle="dropdown"]').is(e.target) && !$('button[data-toggle="dropdown"]').has(e.target).length && !$('a[data-toggle="dropdown"]').is(e.target) && !$('a[data-toggle="dropdown"]').has(e.target).length && !$(".atto_hasmenu").is(e.target)){
+        	$('.dropdown .dropdown-menu:not(.lambda-login)').slideUp("fast");
+    	}                       
+	});
+	$(document).on('click', '.modchooser button[data-action="show-option-summary"], .modchooser button.closeoptionsummary', function(event) {
+		$('.carousel-item[data-region="modules"]').toggleClass("active");
+		$('.carousel-item[data-region="help"]').toggleClass("active");
+	});
+
+	});
+}) (jQuery);
+
+
+var togglesidebar = function() {
+  var sidebar_open = Y.one('body').hasClass('sidebar-open');
+  if (sidebar_open) {
+    Y.one('body').removeClass('sidebar-open');
+    M.util.set_user_preference('theme_lambda_sidebar', 'sidebar-closed');
+  } else {
+    Y.one('body').addClass('sidebar-open');
+    M.util.set_user_preference('theme_lambda_sidebar', 'sidebar-open');
+  }
+};
+
+M.theme_lambda = M.theme_lambda || {};
+M.theme_lambda.sidebar =  {
+  init: function() {
+    Y.one('body').delegate('click', togglesidebar, '#sidebar-btn');
+  }
+};</script><script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://courseweb.sliit.lk/lib/requirejs.php/1656610110/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://courseweb.sliit.lk/lib/javascript.php/1656610110/lib/jquery/jquery-3.5.1.min',
+        jqueryui: 'https://courseweb.sliit.lk/lib/javascript.php/1656610110/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://courseweb.sliit.lk/lib/javascript.php/1656610110/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://courseweb.sliit.lk/lib/javascript.php/1656610110/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");require(['core/first'], function() {
+require(['core/prefetch']);
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://courseweb.sliit.lk/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage('en', {
+  "Audio Player": "Audio Player",
+  "Video Player": "Video Player",
+  "Play": "Play",
+  "Pause": "Pause",
+  "Replay": "Replay",
+  "Current Time": "Current Time",
+  "Duration": "Duration",
+  "Remaining Time": "Remaining Time",
+  "Stream Type": "Stream Type",
+  "LIVE": "LIVE",
+  "Seek to live, currently behind live": "Seek to live, currently behind live",
+  "Seek to live, currently playing live": "Seek to live, currently playing live",
+  "Loaded": "Loaded",
+  "Progress": "Progress",
+  "Progress Bar": "Progress Bar",
+  "progress bar timing: currentTime={1} duration={2}": "{1} of {2}",
+  "Fullscreen": "Fullscreen",
+  "Non-Fullscreen": "Non-Fullscreen",
+  "Mute": "Mute",
+  "Unmute": "Unmute",
+  "Playback Rate": "Playback Rate",
+  "Subtitles": "Subtitles",
+  "subtitles off": "subtitles off",
+  "Captions": "Captions",
+  "captions off": "captions off",
+  "Chapters": "Chapters",
+  "Descriptions": "Descriptions",
+  "descriptions off": "descriptions off",
+  "Audio Track": "Audio Track",
+  "Volume Level": "Volume Level",
+  "You aborted the media playback": "You aborted the media playback",
+  "A network error caused the media download to fail part-way.": "A network error caused the media download to fail part-way.",
+  "The media could not be loaded, either because the server or network failed or because the format is not supported.": "The media could not be loaded, either because the server or network failed or because the format is not supported.",
+  "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.",
+  "No compatible source was found for this media.": "No compatible source was found for this media.",
+  "The media is encrypted and we do not have the keys to decrypt it.": "The media is encrypted and we do not have the keys to decrypt it.",
+  "Play Video": "Play Video",
+  "Close": "Close",
+  "Close Modal Dialog": "Close Modal Dialog",
+  "Modal Window": "Modal Window",
+  "This is a modal window": "This is a modal window",
+  "This modal can be closed by pressing the Escape key or activating the close button.": "This modal can be closed by pressing the Escape key or activating the close button.",
+  ", opens captions settings dialog": ", opens captions settings dialog",
+  ", opens subtitles settings dialog": ", opens subtitles settings dialog",
+  ", opens descriptions settings dialog": ", opens descriptions settings dialog",
+  ", selected": ", selected",
+  "captions settings": "captions settings",
+  "subtitles settings": "subtitles settings",
+  "descriptions settings": "descriptions settings",
+  "Text": "Text",
+  "White": "White",
+  "Black": "Black",
+  "Red": "Red",
+  "Green": "Green",
+  "Blue": "Blue",
+  "Yellow": "Yellow",
+  "Magenta": "Magenta",
+  "Cyan": "Cyan",
+  "Background": "Background",
+  "Window": "Window",
+  "Transparent": "Transparent",
+  "Semi-Transparent": "Semi-Transparent",
+  "Opaque": "Opaque",
+  "Font Size": "Font Size",
+  "Text Edge Style": "Text Edge Style",
+  "None": "None",
+  "Raised": "Raised",
+  "Depressed": "Depressed",
+  "Uniform": "Uniform",
+  "Dropshadow": "Dropshadow",
+  "Font Family": "Font Family",
+  "Proportional Sans-Serif": "Proportional Sans-Serif",
+  "Monospace Sans-Serif": "Monospace Sans-Serif",
+  "Proportional Serif": "Proportional Serif",
+  "Monospace Serif": "Monospace Serif",
+  "Casual": "Casual",
+  "Script": "Script",
+  "Small Caps": "Small Caps",
+  "Reset": "Reset",
+  "restore all settings to the default values": "restore all settings to the default values",
+  "Done": "Done",
+  "Caption Settings Dialog": "Caption Settings Dialog",
+  "Beginning of dialog window. Escape will cancel and close the window.": "Beginning of dialog window. Escape will cancel and close the window.",
+  "End of dialog window.": "End of dialog window.",
+  "{1} is loading.": "{1} is loading.",
+  "Exit Picture-in-Picture": "Exit Picture-in-Picture",
+  "Picture-in-Picture": "Picture-in-Picture"
+});
+
+    });
+});;
+function legacy_activity_onclick_handler_1(e) { e.halt(); window.open('https://courseweb.sliit.lk/mod/resource/view.php?id=355040&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_2(e) { e.halt(); window.open('https://courseweb.sliit.lk/mod/resource/view.php?id=355041&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_3(e) { e.halt(); window.open('https://courseweb.sliit.lk/mod/resource/view.php?id=355602&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_4(e) { e.halt(); window.open('https://courseweb.sliit.lk/mod/resource/view.php?id=353049&redirect=1', '', 'width=620,height=450,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+M.util.js_pending('block_settings/settingsblock'); require(['block_settings/settingsblock'], function(amd) {amd.init("20", null); M.util.js_complete('block_settings/settingsblock');});;
+
+    require(['core/yui'], function(Y) {
+            Y.on('click', legacy_activity_onclick_handler_1, '#label_12_99', null);
+    });
+;
+
+    require(['core/yui'], function(Y) {
+            Y.on('click', legacy_activity_onclick_handler_2, '#label_12_100', null);
+    });
+;
+
+    require(['core/yui'], function(Y) {
+            Y.on('click', legacy_activity_onclick_handler_3, '#label_12_101', null);
+    });
+;
+
+    require(['core/yui'], function(Y) {
+            Y.on('click', legacy_activity_onclick_handler_4, '#label_12_102', null);
+    });
+;
+M.util.js_pending('block_navigation/navblock'); require(['block_navigation/navblock'], function(amd) {amd.init("21"); M.util.js_complete('block_navigation/navblock');});;
+
+require(['jquery'], function($) {
+    require(['theme_boost/bootstrap/popover'], function() {
+        var target = $("#calendar-day-popover-link-6071-2025-52-67b9a3dc3394167b9a3dc3108165");
+        target.popover({
+            content: function() {
+                var source = target.next().find("> *:not('.hidden')");
+                var content = $('<div>');
+
+                if (source.length) {
+                    content.html(source.clone(false));
+                } else {
+                    content.html(target.data('alternate'));
+                }
+
+                return content.html();
+            }
+        });
+    });
+});
+;
+
+require([
+    'jquery',
+    'core_calendar/selectors',
+    'core_calendar/events',
+], function(
+    $,
+    CalendarSelectors,
+    CalendarEvents
+) {
+
+    $('body').on(CalendarEvents.filterChanged, function(e, data) {
+        M.util.js_pending("month-mini-67b9a3dc3394167b9a3dc3108165-filterChanged");
+        // A filter value has been changed.
+        // Find all matching cells in the popover data, and hide them.
+        $("#month-mini-2025-2-67b9a3dc3394167b9a3dc3108165")
+            .find(CalendarSelectors.popoverType[data.type])
+            .toggleClass('hidden', !!data.hidden);
+        M.util.js_complete("month-mini-67b9a3dc3394167b9a3dc3108165-filterChanged");
+    });
+});
+;
+
+require(['jquery', 'core_calendar/calendar_mini'], function($, CalendarMini) {
+    CalendarMini.init($("#calendar-month-2025-2-67b9a3dc3394167b9a3dc3108165"), !0);
+});
+;
+
+require(['jquery', 'core_calendar/calendar_filter'], function($, CalendarFilter) {
+    CalendarFilter.init($("#event-filter-67b9a3dc33e5d67b9a3dc3108166"));
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+    require(['core/yui'], function(Y) {
+            Y.on('click', legacy_activity_onclick_handler_4, '#label_12_102', null);
+    });
+;
+
+        require(['jquery', 'core/custom_interaction_events'], function($, CustomEvents) {
+            CustomEvents.define('#jump-to-activity', [CustomEvents.events.accessibleChange]);
+            $('#jump-to-activity').on(CustomEvents.events.accessibleChange, function() {
+                if (!$(this).val()) {
+                    return false;
+                }
+                $('#url_select_f67b9a3dc3108177').submit();
+            });
+        });
+    ;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script src="https://courseweb.sliit.lk/theme/javascript.php/lambda/1736872561/footer"></script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","yes":"Yes","no":"No","viewallcourses":"View all courses","cancel":"Cancel","morehelp":"More help","loadinghelp":"Loading...","confirm":"Confirm","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error","file":"File","url":"URL"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} links to this file","select":"Select"},"admin":{"confirmdeletecomments":"You are about to delete comments, are you sure?","confirmation":"Confirmation"},"debug":{"debuginfo":"Debug info","line":"Line","stacktrace":"Stack trace"},"langconfig":{"labelsep":": "}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"MathJax.Hub.Config({\r\n    config: [\"Accessible.js\", \"Safe.js\"],\r\n    errorSettings: { message: [\"!\"] },\r\n    skipStartupTypeset: true,\r\n    messageStyle: \"none\"\r\n});\r\n","lang":"en"});
+});
+Y.use("moodle-theme_lambda-sidebar",function() {M.theme_lambda.sidebar.init();
+});
+M.util.help_popups.setup(Y);
+Y.use("moodle-core-popuphelp",function() {M.core.init_popuphelp();
+});
+ M.util.js_pending('random67b9a3dc3108178'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random67b9a3dc3108178'); });
+})();
+//]]>
+</script>
+
+</body>
+</html>
